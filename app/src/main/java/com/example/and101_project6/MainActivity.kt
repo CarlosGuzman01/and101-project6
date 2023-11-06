@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         pokemonTypeList = mutableListOf()
 
         getRandomPokemon()
+
     }
 
     private fun getRandomPokemon(){
@@ -73,12 +74,7 @@ class MainActivity : AppCompatActivity() {
                         val pokemonAdapter = PokemonAdapter(pokemonList, pokemonNameList, pokemonTypeList)
                         recyclerViewPokemon.adapter = pokemonAdapter
                         recyclerViewPokemon.layoutManager = LinearLayoutManager(this@MainActivity)
-                        recyclerViewPokemon.addItemDecoration(
-                            DividerItemDecoration(
-                                this@MainActivity,
-                                LinearLayoutManager.VERTICAL
-                            )
-                        )
+
 
 
                         pokemonList.add(pokemonImage)
@@ -87,13 +83,19 @@ class MainActivity : AppCompatActivity() {
                         var size = pokemonList.size
                         Log.d("size of the list: ", "$pokemonList.size")
 
+
+
                     }
 
                 }]
             }
 
-
-
+        recyclerViewPokemon.addItemDecoration(
+            DividerItemDecoration(
+                this@MainActivity,
+                LinearLayoutManager.VERTICAL
+            )
+        )
 
 
     }
